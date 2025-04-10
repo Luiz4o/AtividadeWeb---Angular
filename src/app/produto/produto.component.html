@@ -1,0 +1,24 @@
+<div class="container">
+    <h1> Lista de carros </h1>
+    <div class="container__produtos" *ngIf="this.produtos.length
+    > 0">
+        <div class="card col-md-4" *ngFor="let produto of produtos">
+            <img src="{{produto.img}}" alt="">
+            <ul>
+                <li>Nome: {{produto.nome}}</li>
+                <li>Preço: {{produto.preco}}</li>
+                <li>Descrição: {{produto.descricao}}</li>
+                <li>Disponível: {{produto.emEstoque}}</li>
+                <li><button class="btn btn-primary" (click)="openProduct(produto.id)" [disabled]="!produto.emEstoque" 
+                    [ngStyle]="{ 
+                    'background-color': produto.emEstoque ? 'blue' : 'grey',
+                    'font-weight': produto.emEstoque ? 'bold' : 'normal',
+                    'border':  produto.emEstoque ? 'solid 1px blue' : 'none',
+                  }">Comprar</button></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h1 *ngIf="this.produtos.length == 0">Nenhum produto disponível no momento</h1>
+    </div>
+</div>

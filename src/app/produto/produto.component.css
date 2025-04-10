@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container__produtos{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 400px;
+    min-width: 400px;
+    margin-right: 20px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.card > ul  {
+    list-style-type: none;
+
+}
+
+.card > img {
+    width: 350px;
+    min-width: 350px;
+    height: 200px;
+    min-height: 200px;
+}
