@@ -15,16 +15,21 @@ export class HomeComponent implements OnInit {
 
   ){}
 
-  showBanner:boolean = true;
+  showBanner:boolean=true;
 
   ngOnInit(): void {
-    this.localStorageService.setLocal('showBanner',this.showBanner)
+    if(!this.localStorageService.getLocal('showBanner')){
+      this.showBanner = this.localStorageService.getLocal('showBanner')
+
+    }
+ 
 
   }
 
 
   visibleBanner(){
     this.showBanner=!this.showBanner
+    this.localStorageService.clearLocal
     this.localStorageService.setLocal('showBanner',this.showBanner)
 
   }

@@ -5,6 +5,7 @@
 }
 
 .container__banner {
+    background-color: RGB(221, 221, 221);
     width: 1000px;
     border-radius: 10px;
     border: solid 1px grey;
